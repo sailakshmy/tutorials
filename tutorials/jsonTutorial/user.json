@@ -1,0 +1,13 @@
+{
+    "name":"Groot",
+    "favoriteNumber":3,
+    "isProgrammer": false,
+    "hobbies":["Playing games","Guarding the galaxy"],
+    "friends":[{
+        "name":"Rocket",
+        "favoriteNumber":6,
+        "isProgrammer":false,
+        "hobbies":["Swearing","Guarding the galaxy"]
+    }
+]
+}

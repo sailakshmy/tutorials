@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chart.js Charts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <canvas id ="myChart"></canvas>
+    </div>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        //Setting Up Global options
+        Chart.defaults.global.defaultFontFamily = "Lato";
+        Chart.defaults.global.defaultFontSize = 15;
+        Chart.defaults.global.defaultFontColor = 'black';
+
+        let massPopChart = new Chart(myChart,{
+            type:'bar',
+            data:{
+                labels:['Maharashtra','Tamil Nadu','Delhi','Gujarat','Uttar Pradesh'],
+                datasets:[{
+                    label:'Confirmed',
+                    data:[128000,56845,56746,26680,16594],
+                    backgroundColor:'yellow', //Also possible to give each value a different color using array
+                    //backgroundColor:['yellow','rgba(0,56,21,255)','#FFFF'....],
+                    borderWidth:2,
+                    borderColor:'grey',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'black'
+
+                },
+                {
+                    label:'Recovered',
+                    data:[64153,31316,31294,18694,9995],
+                    backgroundColor:'green',
+                    borderWidth:3,
+                    borderColor:'black',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'white'
+                },
+                {
+                    label:'Deaths',
+                    data:[5984,704,2112,1638,507],
+                    backgroundColor:'red',
+                    borderWidth:1,
+                    borderColor:"white",
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'grey'
+                }
+            ]
+            },
+            options:{
+                title:{
+                    display:true,
+                    text:"Worst Covid affected states in India",
+                    fontSize: 20
+                },
+                legend:{
+                    display: true,
+                    position:'right',
+                    labels:{
+                        fontColor:'grey'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        top: 200,
+                        bottom:10,
+                        right:0
+
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                }
+            }
+        });
+    </script>
+</body>
+</html>
