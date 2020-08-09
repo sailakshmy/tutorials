@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import axios from 'axios';
 
 class CreateUser extends Component{
     constructor(props){
@@ -22,6 +23,10 @@ class CreateUser extends Component{
         }
         console.log(user);
         //window.location='/';
+        axios.post('http://localhost:5000/users/add',user)//Sends an http post request to the backend end point. This expects a JSON object in the request body
+        .then(res=> console.log(res.data))
+        .catch(err=> console.log(err));
+
         this.setState({ //This is to allow multiple users to be created at once
             username:''
         });
