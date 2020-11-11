@@ -15,6 +15,13 @@ const configureStore = () => {
     sagaMiddleware.run(rootSaga);//Step-13; //Step-17-to pass the RootSaga as a parameter to the run function
 
     store.dispatch({type:'HELLO'});//Step-21: Trial only.
+    store.dispatch({type:'HELLO'}); //Step-24:- Trial only
+    store.dispatch({type:'HELLO'});//Step-24: Trial Only.
+    //store.dispatch({type:'LOGOUT'}); //Step-29
+    store.dispatch({type:'LOGIN'}); //Step-26: Take effect trial
+    store.dispatch({type:'LOGIN'}); //Step-26: Take effect trial
+    store.dispatch({type:'LOGIN'}); //Step-26: Take effect trial
+    store.dispatch({type:'LOGOUT'});
     return store;
 }
 
