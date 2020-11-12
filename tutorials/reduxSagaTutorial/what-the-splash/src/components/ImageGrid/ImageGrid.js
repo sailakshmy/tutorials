@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {loadImages} from '../../actions/index';// Step-37
 
 
 import './styles.css';
@@ -39,6 +40,7 @@ class ImageGrid extends Component {
                             />
                         </div>
                     ))}
+                    <a onClick={this.props.loadImages}>Load Images</a> {/**STep-39 */}
                 </section>
             </div>
         );
@@ -48,7 +50,12 @@ const mapStateToProps = (state) => ({
     isLoading: state.isLoading,
     images: state.images,
     error: state.error
-})
+});
 
-export default connect(mapStateToProps, null)(ImageGrid);
+const mapDispatchToProps = (dispatch) =>({ //Step-38
+    loadImages : ()=> dispatch(loadImages())
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageGrid);
 
