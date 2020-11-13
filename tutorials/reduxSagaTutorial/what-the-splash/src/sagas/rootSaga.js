@@ -1,4 +1,4 @@
-import {takeEvery, put, take, call} from 'redux-saga/effects';
+/*import {takeEvery, put, take, call} from 'redux-saga/effects';
 import {IMAGES} from '../constants/index'; //Step-33
 
 //Watcher Saga
@@ -35,4 +35,7 @@ function* workerSagaLogout(){//Step-30
     yield put({type:'ACTION_FROM_LOGOUT_WORKER_SAGA'});
 } */ //Step -32
 
-export default rootSaga;
+//export default rootSaga; */ Step-45
+import imagesSaga from './imagesSaga';//Step-46
+
+export default imagesSaga; //Step-46

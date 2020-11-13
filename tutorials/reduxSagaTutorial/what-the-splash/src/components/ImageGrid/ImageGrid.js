@@ -8,9 +8,9 @@ import './styles.css';
 const key = '5f96323678d05ff0c4eb264ef184556868e303b32a2db88ecbf15746e6f25e02';
 
 class ImageGrid extends Component {
-    state = {
+    /*state = {
         images: [],
-    };
+    };*///Step-40
 
     componentDidMount() {
         fetch(`https://api.unsplash.com/photos/?client_id=${key}&per_page=28`)
@@ -23,7 +23,8 @@ class ImageGrid extends Component {
     }
 
     render() {
-        const { images } = this.state;
+       // const { images } = this.state; //Step-41
+       const {images} = this.props;
         return (
             <div className="content">
                 <section className="grid">
